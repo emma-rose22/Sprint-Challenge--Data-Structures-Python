@@ -191,13 +191,13 @@ class BinarySearchTree:
         if node.left:
             node.left.dft_print(node.left)
 
-    def get_same_names(self, target):
-        global duplicates
+    # def get_same_names(self, target):
+    #     global duplicates
 
-        if self.value == target.value:
-            duplicates.append(self.value)
+    #     if self.value == target.value:
+    #         duplicates.append(self.value)
 
-        if target.right:
-            target.right.get_same_names(self.right, target.right)
-        if target.left:
-            target.left.get_same_names(self.left, target.left)
+    #     if target.right:
+    #         target.right.get_same_names(self.right, target.right)
+    #     if target.left:
+    #         target.left.get_same_names(self.left, target.left)

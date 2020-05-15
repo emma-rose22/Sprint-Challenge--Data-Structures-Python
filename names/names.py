@@ -29,18 +29,27 @@ bst_1 = BinarySearchTree(names_1)
 
 bst_2 = BinarySearchTree(names_2)
 
-def get_same_names(bst_1, bst_2):
-    global duplicates
+for i in bst_1.value:
+    if bst_2.value.contains(i) == True:
+        duplicates.append(i)
 
-    if bst_1.value == bst_2.value:
-        duplicates.append(bst_1.value)
 
-    if bst_1.right:
-        bst_1.right.get_same_names(bst_1.right, bst_2.right)
-    if bst_1.left:
-        bst_1.left.get_same_names(bst_1.left, bst_2.left)
 
-get_same_names(bst_1, bst_2)
+# def get_same_names(bst_1, bst_2):
+#     global duplicates
+
+#     for i in bst_1.values:
+#         if bst_2.contains(i):
+#             duplicates.append(i)
+
+#     if bst_1.right:
+#         bst_1.right.get_same_names(bst_1.right, bst_2.right)
+#     if bst_1.left:
+#         bst_1.left.get_same_names(bst_1.left, bst_2.left)
+
+#get_same_names(bst_1, bst_2)
+
+#print(bst_2.value)
 
 
 # print('first head:', ll_1.head.value)
