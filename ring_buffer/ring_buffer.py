@@ -1,9 +1,14 @@
+from collections import deque
+
 class RingBuffer:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.storage = deque()
 
     def append(self, item):
-        pass
+        self.storage.append(item)
+        if len(self.storage) > self.capacity:
+            self.storage.popleft()
 
     def get(self):
-        pass
+        return list(self.storage)
