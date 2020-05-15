@@ -192,16 +192,12 @@ class BinarySearchTree:
             node.left.dft_print(node.left)
 
     def get_same_names(self, target):
-        if target == self.value:
-            duplicates.append(target)
-        if target < self.value:
-            #go left if it is a BTSNode
-            if not self.left:
-                #if we can't go left, then our value isn't here
-                return False
-            return self.left.contains(target)
-        else: 
-            #go right
-            if not self.right:
-                return False
-            return self.right.contains(target)
+        global duplicates
+
+        if self.value == target.value:
+            duplicates.append(self.value)
+
+        if target.right:
+            target.right.get_same_names(self.right, target.right)
+        if target.left:
+            target.left.get_same_names(self.left, target.left)
