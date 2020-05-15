@@ -1,39 +1,39 @@
 from collections import deque
 
 class BinarySearchTree:
-    def __init__(self, value):
+    def __init__(self, value=''):
         self.value = value
         self.left = None
         self.right = None
 
     def insert(self, value):
         # lesson code
-        # if value < self.value:
-        #     #we know we need to go left
-        #     #how do we know when to recurse again? or stop?
-        #     if not self.left:
-        #         # we can park our value here
-        #         self.left = BinarySearchTree(value)
-        #     else:
-        #         self.left.insert(value)
-        # else:
-        #     # we know we need to go right
-        #     if not self.right:
-        #         self.right = BinarySearchTree(value)
-        #     else:
-        #         self.right.insert(value)
-        # end lesson code
-
         if value < self.value:
+            #we know we need to go left
+            #how do we know when to recurse again? or stop?
             if not self.left:
+                # we can park our value here
                 self.left = BinarySearchTree(value)
             else:
-                return self.left.insert(value)
-        if value >= self.value:
+                self.left.insert(value)
+        else:
+            # we know we need to go right
             if not self.right:
                 self.right = BinarySearchTree(value)
             else:
-                return self.right.insert(value)
+                self.right.insert(value)
+        # end lesson code
+
+        # if value < self.value:
+        #     if not self.left:
+        #         self.left = BinarySearchTree(value)
+        #     else:
+        #         return self.left.insert(value)
+        # if value >= self.value:
+        #     if not self.right:
+        #         self.right = BinarySearchTree(value)
+        #     else:
+        #         return self.right.insert(value)
 
     # Return True if the tree contains the value
     # False if it does not

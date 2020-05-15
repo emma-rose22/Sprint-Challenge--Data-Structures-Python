@@ -10,56 +10,15 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 
-#make the linked lists for each file
-
-# ll_1 = LinkedList()
-# for i in names_1:
-#     ll_1.add_to_head(i)
-
-# ll_2 = LinkedList()
-# for i in names_2:
-#     ll_2.add_to_head(i)
-
-#insert head of each list into function
-
 duplicates = []
 
-bst_1 = BinarySearchTree(names_1)
+bst= BinarySearchTree()
 
-
-bst_2 = BinarySearchTree(names_2)
-
-for i in bst_1.value:
-    if bst_2.value.contains(i) == True:
-        duplicates.append(i)
-
-
-
-# def get_same_names(bst_1, bst_2):
-#     global duplicates
-
-#     for i in bst_1.values:
-#         if bst_2.contains(i):
-#             duplicates.append(i)
-
-#     if bst_1.right:
-#         bst_1.right.get_same_names(bst_1.right, bst_2.right)
-#     if bst_1.left:
-#         bst_1.left.get_same_names(bst_1.left, bst_2.left)
-
-#get_same_names(bst_1, bst_2)
-
-#print(bst_2.value)
-
-
-# print('first head:', ll_1.head.value)
-# print('what is next:', ll_1.head.get_next().value)
-
-# names_1_head = ll_1.head
-# names_2_head = ll_2.head
-
-# ll_1.get_same_names(names_2_head)
-# print(duplicates)
+for i in names_1:
+    bst.insert(i)
+for x in names_2:
+    if bst.contains(x):
+        duplicates.append(x)
 
 # duplicates = []  # Return the list of duplicates in this data structure
 
