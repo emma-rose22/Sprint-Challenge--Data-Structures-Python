@@ -54,9 +54,6 @@ class LinkedList:
 
         self.head = prev
 
-        node, prev, node.next_node = node.get_next(), node, prev
-        self.head = prev
-
             #update the pointer
             #traverse the list
 
