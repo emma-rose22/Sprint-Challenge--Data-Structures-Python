@@ -1,3 +1,5 @@
+from collections import deque
+
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
